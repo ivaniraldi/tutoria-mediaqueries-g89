@@ -1,0 +1,119 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    display: grid;
+    grid-template-areas: 
+    "navbar"
+    "filtros"
+    "contenido"
+    "footer"
+    ;
+    min-height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 80px 50px auto 50px;
+}
+
+.navbar{
+    grid-area: navbar;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(238, 226, 226);
+}
+.links{
+    list-style: none;
+    display: none;
+    gap: 10px;
+}
+
+.icono-ham{
+    display: block;
+}
+
+.filtros{
+    grid-area: filtros;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(236, 255, 224);
+}
+
+.filtros-lista{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.contenido{
+    grid-area: contenido;
+}
+
+.footer{
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(233, 215, 185);
+}
+
+span{
+    padding: 1px;
+    border: 1px solid black;
+}
+
+.grilla-productos{
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 10px;
+}
+
+.producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid blue;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (min-width: 576px) {
+    .container{
+        grid-template-areas: 
+        "navbar navbar"
+        "filtros contenido"
+        "footer footer"
+        ;
+        grid-template-columns: 25% auto;
+        min-height: 100vh;
+        grid-template-rows: 80px auto 50px;
+    }
+    .links{
+        display: flex;
+        gap: 10px
+    }
+    .icono-ham{
+        display: none;
+    }
+    .filtros{
+        flex-direction: column;
+        justify-content: start;
+    }
+    .filtros-lista{
+        flex-direction: column;
+    }
+    .grilla-productos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
